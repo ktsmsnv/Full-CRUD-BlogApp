@@ -29,8 +29,8 @@
 /* ==================== GENERAL ========================== */
 
 * {
-	/* margin: 0; */
-	/* padding: 0; */
+	margin: 0;
+	padding: 0;
 	outline: 0;
 	border: 0;
 	appearance: 0;
@@ -185,6 +185,9 @@ nav button {
 	font-size: 0.8rem;
 	text-align: center;
 }
+.category__button:hover {
+	color: var(--color-white);
+}
 
 /* ===================== POST ======================= */
 .post__thumbnail {
@@ -210,4 +213,217 @@ nav button {
 	height: 2.5rem;
 	border-radius: var(--card-border-radius-3);
 	overflow: hidden;
+}
+
+/* ===================== FEATURED  ======================= */
+.featured {
+	margin-top: 8rem;
+}
+
+.featured__container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+}
+
+.featured .post__thumbnail {
+	height: fit-content;
+}
+
+/* ===================== POSTS  ======================= */
+.posts__container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 4rem;
+	margin-bottom: 4rem;
+}
+
+/* ===================== CATEGORY BUTTONS  ======================= */
+.category__buttons {
+	padding: 4rem 0;
+	border-top: 2px solid var(--color-gray-900);
+	border-bottom: 2px solid var(--color-gray-900);
+}
+
+.category__buttons-container {
+	width: fit-content;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+/* ===================== FOOTER  ======================= */
+footer {
+	background: var(--color-gray-900);
+	padding: 5rem 0 0;
+	box-shadow: inset 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.footer__socials {
+	margin-inline: auto;
+	width: fit-content;
+	margin-bottom: 5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.2rem;
+}
+
+.footer__socials a {
+	background: var(--color-bg);
+	border-radius: 50%;
+	height: 2.3rem;
+	width: 2.3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer__socials a:hover {
+	background: var(--color-white);
+	color: var(--color-bg);
+}
+
+.footer__container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+footer li {
+	padding: 0.4rem 0;
+}
+
+footer h4 {
+	color: var(--color-white);
+	margin-bottom: 0.6rem;
+}
+
+footer ul a {
+	opacity: 0.75;
+}
+footer ul a:hover {
+	letter-spacing: 0.1rem;
+	opacity: 1;
+}
+
+.footer__copyright {
+	text-align: center;
+	padding: 1.5rem 0;
+	border-top: 2px solid var(--color-bg);
+	margin-top: 4rem;
+}
+
+/* ===================== MEDIA QUERIES (Medium-Sized Devices)  ======================= */
+.container {
+	width: var(--container-width-md);
+}
+h2 {
+	font-size: 1.6rem;
+}
+h3 {
+	font-size: 1.2rem;
+}
+h5 {
+	font-size: 0.8rem;
+}
+nav button {
+	display: inline-block;
+	font-size: 1.5rem;
+	background: transparent;
+	color: var(--color-white);
+	cursor: pointer;
+}
+
+nav button#close__nav-btn {
+	display: none;
+}
+.nav__container {
+	position: relative;
+}
+.nav__items {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	top: 100%;
+	right: 0;
+	width: 12rem;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 0;
+}
+
+.nav__items li {
+	width: 100%;
+	height: 4.5rem;
+	display: flex;
+	align-items: center;
+	box-shadow: -2rem 3rem 7rem rgba(0, 0, 0, 0.7);
+	background: var(--color-gray-900);
+	border-top: 1px solid var(--color-bg);
+	opacity: 0;
+
+	animation: animateDropdown 400ms 0s ease forwards;
+	transform-origin: top;
+}
+
+.nav__items li:nth-child(2) {
+	animation-delay: 150ms;
+}
+.nav__items li:nth-child(3) {
+	animation-delay: 250ms;
+}
+.nav__items li:nth-child(4) {
+	animation-delay: 350ms;
+}
+.nav__items li:nth-child(5) {
+	animation-delay: 450ms;
+}
+.nav__items li:nth-child(6) {
+	animation-delay: 550ms;
+}
+/* Nav dropodwn animations */
+@keyframes animateDropdown {
+	0% {
+		transform: rotateX(90deg);
+	}
+	100% {
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+}
+
+.nav__items a {
+	border-radius: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-gray-900);
+	padding: 0 2rem;
+	display: flex;
+	align-items: center;
+}
+
+.nav__profile {
+	background: var(--color-gray-900);
+}
+
+.nav__profile ul {
+	top: 100%;
+	width: 100%;
+}
+
+.nav__profile .avatar {
+	margin-left: 2rem;
+}
+
+.featured__container {
+	gap: 3rem;
+}
+
+.posts__container {
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+}
+
+.footer__container {
+	grid-template-columns: 1fr 1fr;
 }
